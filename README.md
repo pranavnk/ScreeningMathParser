@@ -23,7 +23,7 @@ Result: 17
 Input: 500a10b66c32
 Result: 14208
 
-Input: 3ae4c66fc32
+Input: 3ae4c66fb32
 Result: 235
 
 Input: 3c4d2aee2a4c41fc4f

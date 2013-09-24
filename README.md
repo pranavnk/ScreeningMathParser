@@ -5,7 +5,7 @@ As part of the interview process, we require all candidates to submit a test. Th
 
 The parser must implement an order of precedence of left to right, brackets are used to explicitly denote precedence by grouping parts of an expression that should be evaluated first again left to right
 
-The parser must also determine that the inputted string is syntactically correct. 
+Recognise the input string and evaluate the expression.
 
 Rules:
 

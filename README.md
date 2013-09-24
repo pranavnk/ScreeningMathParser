@@ -9,7 +9,7 @@ The parser must also determine that the inputted string is syntactically correct
 
 Rules:
 
-a = '+', b = '-', c = '%', d = '*', e = '(', f = ')'
+a = '+', b = '-', c = '*', d = '%', e = '(', f = ')'
 
 # Acceptance criteria
 

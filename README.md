@@ -1,11 +1,11 @@
 NICE Developers - Simple Mathematical Parser Screening
 ===================
 
-As part of the interview process, we require all candidates to submit a test. This test is about writing a custom mathematical parser to compute the value of a inputted string.
+As part of the interview process, we require all candidates to submit a test. This test is about writing a custom mathematical parser to compute the value of an inputted string.
 
 The parser must implement an order of precedence of left to right, brackets are used to explicitly denote precedence by grouping parts of an expression that should be evaluated first again left to right
 
-The parser must recognise the input string and evaluate the expression.
+The parser must rnnecognise the input string and evaluate the expression.
 
 Rules:
 

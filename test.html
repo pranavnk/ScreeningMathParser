@@ -1,0 +1,65 @@
+<html>
+<FORM ID="demoMatch" NAME="demoMatch" METHOD=POST ACTION="javascript:void(0)">
+<h2>NICE Developers - Simple Mathematical Parser Screening</h2>
+<p>Just type the expression in textbox below and see the result by clicking on Evaluate button.</p>
+
+<p>Expression: <input type='text' id='expText' ></input></p>
+
+<p><input type='button' id='evalBtn' onclick='javascript:ShowResult()' value='Evaluate'></input></p>
+<p>Result: <label id='resultLabel'></label></p>
+<script type='text/javascript' >
+
+function ShowResult()
+{
+  var expr=document.getElementById('expText').value;
+  
+  //Convert expression to algebric format and display result
+  expr = EvaluateExpr(expr);
+  
+  document.getElementById('resultLabel').innerText = expr;
+}
+
+// Recursive function to convert expression to algebric format and return result of the converted expression
+function EvaluateExpr(expr)
+{
+if(expr==null || expr.length==0) return;
+
+ //Matches +,-,* or / operators
+  var pattern1 = '\\d+[a-d]\\d+';
+
+  //Matches left and right parantheses
+  var pattern2 = 'e([a-d0-9]*)f';
+
+  var re1 = new RegExp(pattern1);
+  var re2 = new RegExp(pattern2);
+
+  //if expression is surrounded by parantheses the remove them
+  if(expr.charAt(0)=='e' && expr.charAt(expr.length-1)=='f')
+  {
+    expr=expr.substring(1,expr.length-1);
+  }
+  
+if(expr==null || expr.length==0) return;
+
+  //Calculate result for all sub expressions included in parantheses 
+  while(expr.match(re2))
+  {
+    var m2 = expr.match(re2);
+    expr = expr.replace(m2[0],EvaluateExpr(m2[0]));
+  }
+
+  //Calculate result of the expression from left to right
+  while(expr.match(re1))
+  {
+    var m = expr.match(re1);
+    
+    var subexpr = m[0].replace('a','+').replace('b','-').replace('c','*').replace('d','/');
+    expr = expr.replace(m[0],eval(subexpr));
+  }
+  return expr;
+}
+
+
+</script>
+</FORM>
+</html>
